@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm sản phẩm</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function checkForm(){
+            let inputName = document.getElementById('txtName').value;
+            if(inputName.trim().length==0){
+               // alert('Name can not be empty');
+                document.getElementById('lblNameError').innerText ="Tên không được để trống";
+                document.getElementById('lblPriceError').innerText ="Giá không được để trống";
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <form action="/doInsert" method="post" onsubmit="return checkForm()">
+            <div class="form-group">
+                <label for="txtName">Tên đồ chơi</label>
+                <input  type="text" name="txtName" id="txtName" class="form-control">
+                <label id="lblNameError" style="color:black">{{model.nameError}}</label>
+            </div>
+            <div class="form-group">
+                <label for="txtPrice">Giá đồ chơi</label>  
+                <input type="text" name="txtPrice" id="txtPrice" class="form-control">  
+                <label id="lblPriceError" style="color:black">{{model.priceError}}</label>
+            </div>   
+              <center><input type="submit" value="Thêm" class="btn btn-default"></center>
+        </form>
+      
+    </div>
+    
+</body>
+</html>

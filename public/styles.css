@@ -1,0 +1,60 @@
+
+a{
+
+    color: black;	
+}
+	
+#center{
+    
+    color: black;
+	
+}
+
+.header{
+	background:pink ;
+	height: 70px;
+}
+
+#article-3, #article-4 {
+	float: left;
+	padding: 50px;
+	padding-left: 20px;
+	height: 50px;
+	padding-top: 10px;	
+}
+#center{
+	padding-top: 1px;
+}
+
+.product{
+margin:50px;
+}
+.product::after{
+	clear: both;
+	content: "";
+	display: table;
+}
+
+.product .product-3{
+	float: left;
+	width: 33.33333333%;
+
+}
+#nav .nav-header .title{
+    font-weight: bold;
+	font-size: 50px;
+	margin-left: 40%;
+}
+
+table, td{
+	background-color: black;
+	border: 1px solid black;
+}
+
+
+
+
+
+
+
+

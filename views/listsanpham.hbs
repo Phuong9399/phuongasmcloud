@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Danh sách sản phẩm</title>
+</head>
+<body>
+      <button class="btn peach-gradient"><a href="/">Back</a></button>
+    <table class="table table-hover">
+        <tr>
+            <td><big><b>Tên đồ chơi</td></big></b>
+            <td><big><b>Giá đồ chơi</td></big></b>
+            <td><big><b>Xóa đồ chơi</td></big></b>
+        </tr>
+        {{#each model}}
+        <tr>
+            <td><big><b>{{name}}</td></big></b>
+            <td><big><b>{{price}}</td></big></b>
+            <td><big><a href="/remove?id={{_id}}">Xóa</a></td></big>
+        </tr>
+        {{/each}}
+    </table>
+</body>
+</html>
