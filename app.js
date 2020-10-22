@@ -27,9 +27,9 @@ app.post('/doInsert', async (req, res) => {
         name: inputName,
         price: inputPrice,
     }
-    if (inputName.length < 4) {
+    if (inputName >=5 && inputname <=15 ) {
         let errorModel = {
-            nameError: "Tên phải lớn hơn 2 kí tự!"
+            nameError: "Tên phải lớn từ 5 đến 15 kí tự!"
         };
         res.render('insert', { model: errorModel })
     }
@@ -52,7 +52,7 @@ app.get("/listsanpham", async (req, res) => {
     res.render("listsanpham", { model: result });
 })
 app.get('/remove', async (req, res) => {
-    let id = req.query.id;
+    let id = req.query.id; 
     var ObjectID = require('mongodb').ObjectID;
     let client = await MongoClient.connect(url);
     let dbo = client.db("heroku_tc9nzks7");
